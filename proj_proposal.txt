@@ -1,0 +1,68 @@
+Project Description
+
+Home:
+* Link to register or log in
+* Logo image
+* Navigation bar to Home, About, Coach, Tutorials, Virtual Coaching, Contact
+* Video intro
+* Social media icons that links to respective social media page
+
+Registration or Log In:
+* Registration form for new users
+* Log in form for existing users
+* Validations applied for both Registration and log in
+* Validations message errors shown in template
+* Password encrypted using bcrypt.
+
+About:
+* Description about academy history, mission and goals.
+
+Coach:
+* Bio about tennis coach.
+* Education, certifications and work history
+
+Tutorials:
+* If user not registered will be redirected to basic tutorials templates, they have to register to have access to full premium content
+* Non registered template includes:
+    * Basic and beginners tutorials for tennis
+    * Videos can be liked and count likes, users can only like the post once
+* If not registered, click in the register link and will redirect to registration form template
+* If already registered will be redirected to the full premium content template, which includes
+    * Logout link
+    * Edit my profile link
+    * Personalized Welcome tag for the user in session
+    * Navigation bar to Technique, Footwork, Mental, Strategy, High Performance, Logistics
+    * Videos can be liked and count likes, users can only like the post once
+
+Virtual Coaching:
+* What is virtual coaching? Description
+* Non registered and users can access this template
+* Example videos of the service provided
+* Link to purchase the service that will redirect to purchase template
+
+Purchase:
+* Once redirect, will land in form to purchase as guest or log in form in case user wants to access their information stored in database
+* For users, billing information can be stored in database for easier checkout but for security no credit card information will be store in database
+* If logging in, will be redirected to a purchase template with the fields pre-field with the data stored in the database
+* After successful purchase, will be redirected to success template where they can upload their video to be analyzed
+
+Contact:
+* Google map for the location of the tennis courts of the academy
+* P tag with the address
+* Mailto email form to contact directly 
+* Social media icons that links to respective social media page
+
+Once being successful, it could extend to all sports and home page would change to a nav bar with different sports.
+
+Bullet points:
+
+* Routing with parameters
+* Picture for Logo
+* Videos for tutorials
+* In contact section, a form that sends directly an email
+* Log In and registration with encrypted password, validations and error messages for validations
+* Social media icons that redirects to social media page
+
+Link to repository:
+
+https://github.com/JesusGarcia86/solo_project.git
