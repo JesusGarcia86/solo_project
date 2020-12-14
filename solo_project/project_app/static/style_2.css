@@ -91,10 +91,6 @@
 ul {
     font-size: 20px;
 }
-#map {
-    height: 400px;
-    width: 100%;
-  }
 .zoe {
     display: inline-block;
     border: 3px solid #cd5601;
@@ -144,4 +140,7 @@ ul {
   .email {
       width: 500px;
       margin-left: 500px;
+  }
+  .header {
+    display: inline-flex;
   }

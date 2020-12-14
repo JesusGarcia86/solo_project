@@ -167,7 +167,7 @@ def delete_mess(request, mess_id):
 
 def create_comm(request):
     if request.method=='POST':
-        Comment.objects.create(comment=request.POST['contents'], poster=User.objects.get(id=request.session['user_id']), message=Forum.objects.get(id=request.POST['message']))
+        Comment.objects.create(content=request.POST['contents'], poster=User.objects.get(id=request.session['user_id']), message=Forum.objects.get(id=request.POST['message']))
         return redirect('/forum')
     return redirect('/')
 
