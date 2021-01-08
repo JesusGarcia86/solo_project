@@ -5,6 +5,8 @@ from .models import UserManager, User, Forum, ForumManager, Comment
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
+import stripe
+from django.conf import settings
 
 def index(request):
     return render(request, "main.html")
@@ -136,7 +138,37 @@ def successView(request):
     return HttpResponse('Success! Thank you for your message.')
 
 def purchase(request):
-    return render(request, "purchase.html")
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe_total = int(1500)
+    description = 'Video Analysis'
+    data_key = settings.STRIPE_PUBLISHABLE_KEY
+    if request.method == 'POST':
+        try:
+            token = request.POST['stripeToken']
+            email = request.POST['stripeEmail']
+            billingName = request.POST['stripeBillingName']
+            billingAddress1 = request.POST['stripeBillingAddressLine1']
+            billingCity = request.POST['stripeBillingAddressCity']
+            billingPostcode = request.POST['stripeBillingAddressZip']
+            billingCountry = request.POST['stripeBillingAddressCountryCode']
+            shippingName = request.POST['stripeShippingName']
+            shippingAddress1 = request.POST['stripeShippingAddressLine1']
+            shippingCity = request.POST['stripeShippingAddressCity']
+            shippingPostcode = request.POST['stripeShippingAddressZip']
+            shippingCountry = request.POST['stripeShippingAddressCountryCode']
+            customer = stripe.Customer.create(
+                email=email,
+                source=token
+            )
+            charge = stripe.Charge.create(
+                amount=stripe_total,
+                currency='usd',
+                description=description,
+                customer=customer.id
+            )
+        except stripe.error.CardError as e:
+            return False,e
+    return render(request, "purchase.html", dict(data_key = data_key, stripe_total = stripe_total, description = description))
 
 def charge(request):
     return render(request, "charge.html")

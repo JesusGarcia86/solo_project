@@ -51,8 +51,8 @@ h1 {
     position: relative;
     display: inline-flex;
     font-size: 30px;
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 50px;
     background: black;
     line-height: 60px;
     border-radius: 50%;
@@ -60,6 +60,12 @@ h1 {
     transition: .5s;
     margin: 0px auto;
     padding: 5px;
+  }
+  .fa li a{
+    color: #cd5601;
+  }
+  .fa li a:hover{
+    color: black;
   }
   ul li:before{
     position: absolute;
@@ -101,17 +107,20 @@ h1 {
     text-shadow: 0 0 15px #4267B2;
   }
   ul li:nth-child(2):hover{
-    color: #ffa502;
+    background-color: #1DA1F2;
+    color: white;
     box-shadow: 0 0 15px #1DA1F2;
     text-shadow: 0 0 15px #1DA1F2;
   }
   ul li:nth-child(3):hover{
-    color: #e23670;
+    background-color: #E1306C;
+    color: black;
     box-shadow: 0 0 15px #E1306C;
     text-shadow: 0 0 15px #E1306C;
   }
   ul li:hover{
-    color: #ffa502;
+    background-color: #d35400;
+    color: black;
     box-shadow: 0 0 15px #d35400;
     text-shadow: 0 0 15px #d35400;
   }

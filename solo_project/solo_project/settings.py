@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'project_app',
+    'stripe',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STRIPE_PUBLISHABLE_KEY = 'pk_live_51HvSkHD8M6oKzONIuOeCVzANhLb1nxvA6kaLHbyoIBnIxO80GDtQdQvMzTTYsz6vPlpB1nom2QuzOr3UIit2zsit00djFuMICT'
+STRIPE_SECRET_KEY = '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'

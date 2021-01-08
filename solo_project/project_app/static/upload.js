@@ -20,6 +20,8 @@ fileUpload.addEventListener('change', function(event){
     }).then(function(res) {
         console.log(res);
         ImgPreview.src = res.data.secure_url;
+        var success = document.getElementById("success");
+      success.innerHTML = "<p>Thank you! Your video has been uploaded! We will analyze your video and send it back to you</p>";
     }).catch(function(err) {
         console.error(err);
     });
