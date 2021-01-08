@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from .secrets import secret
+from .secrets import secret, private, publishable
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -126,5 +126,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STRIPE_PUBLISHABLE_KEY = 'pk_live_51HvSkHD8M6oKzONIuOeCVzANhLb1nxvA6kaLHbyoIBnIxO80GDtQdQvMzTTYsz6vPlpB1nom2QuzOr3UIit2zsit00djFuMICT'
-STRIPE_SECRET_KEY = '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'
+STRIPE_PUBLISHABLE_KEY = publishable
+STRIPE_SECRET_KEY = private
